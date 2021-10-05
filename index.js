@@ -40,26 +40,28 @@ app.post("/register", (req, res) => {
   );
 });
 
-// ----------For date insertion---------------------
-app.post("/demo", (req, res) => {
-  // const demo = req.body.userdemo;
-  const fromdate = req.body.selectedDate;
+// // ----------For date insertion---------------------
+// app.post("/demo", (req, res) => {
+//   // const demo = req.body.userdemo;
+//   const fromdate = req.body.selectedDate;
 
-  db.query(
-    "INSERT INTO date(fromdate) VALUES(?)",
-    [fromdate],
-    (err, result) => {
-      if (err) {
-        console.log(res);
-      } else {
-        console.log("result is", result);
-        res.send({ messagee: "succesfully inserted" });
-      }
-    }
-  );
-});
+//   db.query(
+//     "INSERT INTO date(fromdate) VALUES(?)",
+//     [fromdate],
+//     (err, result) => {
+//       if (err) {
+//         console.log(res);
+//       } else {
+//         console.log("result is", result);
+//         res.send({ messagee: "succesfully inserted" });
+//       }
+//     }
+//   );
+// });
 // ----------To date insertion----------------------
-
+app.get('/',(req,res)=>{
+  res.send('Data Is Comming From Backend')
+})
 app.post("/login", (req, res) => {
   // const username = req.body.username;
   const email = req.body.email;
